@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações CME</title>
+</head>
+<body>
+    <h1>Informações - Geomagnetic Storm</h1>
+    <h2><%=data%></h2>
+
+    <ul>
+        <h3>Horário de Início</h3>
+        <li>
+            <%=infosGST[0].startTime%>
+        </li>
+        
+        <h3>Indíce KP</h3>
+        <%for(let i = 0; i < infosGST[0].allKpIndex.length; i++){%>
+        <li>
+            <p><%=infosGST[0].allKpIndex[i].source%> KP Index <%=infosGST[0].allKpIndex[i].kpIndex%> period end time <%=infosGST[0].allKpIndex[i].observedTime%></p>
+        </li>
+        <%}%>
+    </ul>
+</body>
+</html>

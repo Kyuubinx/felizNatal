@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <%if (errors){%>
+        <ul>
+            <%for(let i = 0; i < errors.length; i++){%>
+                <li><%=errors[i].msg%></li>
+            <%}%>
+        </ul>       
+    <%}%>
+
+    <form action="/usuario/validarLogin" method="post">
+        
+        <label for="input-user">Usuario/E-mail</label><br>
+        <input type="text" name="usuario" id="input-user" value="<%=user.usuario%>">
+        <br>
+        <br>
+
+        <label for="input-password">Senha</label><br>
+        <input type="password" name="senha" id="input-password" value="<%=user.senha%>">
+        <br>
+        <br>
+
+        <button type="submit">Entrar</button>
+        
+    </form>
+    <br>
+    <a href="/cadastroUsuario">Cadastre-se</a>
+    
+</body>
+</html>

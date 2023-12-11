@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações CME</title>
+</head>
+<body>
+    <h1>Informações - Solar Flare</h1>
+    <h2><%=data%></h2>
+
+    <ul>
+        <h3>Horário de Início</h3>
+        <li>
+            <%=infosFLR[0].beginTime%>
+        </li>
+
+        <h3>Horário de Pico</h3>
+        <li>
+            <%=infosFLR[0].peakTime%>
+        </li>
+
+        <h3>Horário Final</h3>
+        <li>
+            <%=infosFLR[0].endTime%>
+        </li>
+
+        <h3>Intensidade</h3>
+        <li>
+            <%=infosFLR[0].classType%>
+        </li>
+        <li>
+            <%=infosFLR[0].sourceLocation%>
+        </li>
+
+        <%if(infosFLR[0].linkedEvents == null){%>
+            <p>Não Possui Nenhuma Atividade Vinculada</p>    
+        <%}else{
+            for(let i = 0; i < infosFLR[0].linkedEvents.length; i++){%>
+                <p><a href="/notasCME/<%=infosFLR[i].linkedEvents[i].activityID%>"><%=infosFLR[i].linkedEvents[i].activityID%></a></p>
+            <%}
+        }%>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coronal Mass Ejection</title>
+</head>
+<body>
+
+    <h1>Coronal Mass Ejection</h1>
+
+    <table>
+        <tr>
+            <th>Data</th>
+            <th></th>
+        </tr>
+
+        <%for(let i = api.length - 1; i >= 0; i--){%>
+            <tr>
+                <td><%=api[i].activityID%></td>
+                <td><a href="/notasCME/<%=api[i].activityID%>">Acessar</a></td>
+            </tr>
+        <%}%>
+    </table>
+</body>
+</html>

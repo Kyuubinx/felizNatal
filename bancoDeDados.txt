@@ -1,0 +1,14 @@
+CREATE TABLE tipo_usuario (
+	id INT(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    descricao VARCHAR(50)
+);
+
+CREATE TABLE usuario (
+	id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100),
+    email VARCHAR(100),
+    senha VARCHAR(32),
+    id_tipo_usuario INT(11)
+);
+
+CREATE TABLE noticias

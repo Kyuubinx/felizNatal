@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações CME</title>
+</head>
+<body>
+    <h1>Informações - Coronal Mass Ejection</h1>
+    <h2><%=data%></h2>
+
+    <ul>
+        <h3>Catálogo</h3>
+        <li>
+            <%=infosCME[0].catalog%>
+        </li>
+
+        <h3>Horário de Início</h3>
+        <li>
+            <%=infosCME[0].startTime%>
+        </li>
+
+        <h3>Naves Espaciais de Detecção</h3>
+        <%for(let i = 0; i < infosCME[0].instruments.length; i++){%>
+            <li>
+                <p><%=infosCME[0].instruments[i].displayName%></p>
+            </li>
+        <%}%>
+
+        <%if(infosCME[0].sourceLocation != ""){%>
+        <li>
+            <%=infosCME[0].sourceLocation%>
+        </li>
+        <%}%>
+
+        <h3>Nota</h3>
+        <li>
+            <%=infosCME[0].note%>
+        </li>
+
+        <h2>CME Analysis</h2>
+        <%for(let i = 0; i < infosCME[0].cmeAnalyses.length; i++){%>
+            <li>
+                <p>Horário: <%=infosCME[0].cmeAnalyses[i].time21_5%></p>
+                <p>Latitude e Longitude: <%=infosCME[0].cmeAnalyses[i].latitude%>; <%=infosCME[0].cmeAnalyses[i].longitude%></p>
+                <p>Velocidade: <%=infosCME[0].cmeAnalyses[i].speed%></p>
+                <p>Nota: <%=infosCME[0].cmeAnalyses[i].note%></p>
+            </li>
+        <%}%>
+    </ul>
+</body>
+</html>
